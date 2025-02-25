@@ -1,39 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Find Your Perfect Mentor – 5 Steps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* CSS Variables for Consistent Colors */
+    :root {
+      --blue-gradient-start: #2E93FA;
+      --blue-gradient-end: #6EB6FB;
+      --step1-color: #F76C38;
+      --step2-color: #A946F7;
+      --step3-color: #60B44B;
+      --step4-color: #FFD056;
+      --step4-text: #333;
+      --step5-color: #2E93FA;
+      --text-color: #555;
+      --bg-light: #f7f7f7;
+      --bg-page: #f2f2f2;
+    }
+
+    /* Base Reset & Typography */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-page);
+      line-height: 1.6;
+      color: var(--text-color);
+    }
+    a { color: inherit; text-decoration: none; }
+    
+    /* Container & Layout */
+    .container {
+      width: 90%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .col {
+      flex: 1;
+      min-width: 280px;
+    }
+    .col-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    @media (max-width: 768px) {
+      .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--blue-gradient-start), var(--blue-gradient-end));
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    
+    /* Section Styling */
+    section {
+      margin-bottom: 100px;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+    }
+    /* For full-width grey sections (steps 2 and 4) */
+    .full-bg {
+      width: 100%;
+      margin: 0;
+      padding: 100px 0;
+      background-color: var(--bg-light);
+    }
+    
+    /* Step Box & Label */
+    .step-label {
+      background-color: var(--step1-color);
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding: 10px 14px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    /* Override per step */
+    .step-1 .step-label { background-color: var(--step1-color); }
+    .step-2 .step-label { background-color: var(--step2-color); }
+    .step-3 .step-label { background-color: var(--step3-color); }
+    .step-4 .step-label { background-color: var(--step4-color); color: var(--step4-text); }
+    .step-5 .step-label { background-color: var(--step5-color); }
+    
+    /* Content Styles */
+    h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    p, ul {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    ul {
+      margin-left: 20px;
+      list-style: disc;
+    }
+    
+    /* Image Styles */
+    img {
+      border-radius: 15px;
+      width: 100%;
+      max-width: 500px;
+      display: block;
+    }
+    /* Diagonal effect for Step 3 image */
+    .step-3 img {
+      transform: rotate(-5deg);
+      max-width: 600px;
+      object-fit: cover;
+    }
+    
+    /* Simple Fade-In Animation */
+    .fade-in {
+      animation: fadeIn 1s ease-out both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
+  <!-- HEADER -->
+  <header>
     <div class="container">
-        <h1>Welcome to My GitHub Page</h1>
-        <p>This is a full-page layout using GitHub Pages.</p>
+      <h1>Find Your Perfect Mentor</h1>
+      <p>Follow these 5 simple steps to get started.</p>
     </div>
+  </header>
+  
+  <!-- STEP 1 (White Background) -->
+  <section class="step-1 fade-in" style="background-color: #fff;">
+    <div class="container">
+      <div class="row">
+        <!-- Text Column -->
+        <div class="col col-6">
+          <div>
+            <div class="step-label">Step 1</div>
+            <h2>Set Your Goals</h2>
+            <p>Before you start searching, take a moment to clarify exactly what you need from a mentor:</p>
+            <ul>
+              <li>Are you preparing for college applications, scholarships, or standardized tests?</li>
+              <li>Do you need specialized help (e.g., essay writing, major selection)?</li>
+              <li>Are you looking for long-term guidance or short-term solutions?</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Image Column -->
+        <div class="col col-6" style="display: flex; align-items: center; justify-content: center;">
+          <img class="fade-in" src="/media/kitbt2dq/cdde4268-d29b-483f-ada6-dca7a12b8226.jpg" alt="Find the Perfect Mentor">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- STEP 2 (Grey Background, Full-Width) -->
+  <section class="step-2 full-bg fade-in">
+    <div class="container">
+      <div class="row">
+        <!-- Text Column -->
+        <div class="col col-6">
+          <div>
+            <div class="step-label">Step 2</div>
+            <h2>Use Filters to Narrow Your Search</h2>
+            <p>Refine your mentor list using filters like:</p>
+            <ul>
+              <li>School, major, and area of expertise</li>
+              <li>Pricing and availability</li>
+              <li>Past reviews and ratings</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Widget Column -->
+        <div class="col col-6" style="display: flex; align-items: center; justify-content: center;">
+          <iframe class="fade-in" src="https://ryan1768.github.io/my-widget/" style="width: 500px; height: 550px; border: 2px solid #ccc; border-radius: 8px;"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- STEP 3 (White Background with Diagonal Image) -->
+  <section class="step-3 fade-in" style="background-color: #fff;">
+    <div class="container">
+      <div class="row">
+        <!-- Text Column -->
+        <div class="col col-6">
+          <div>
+            <div class="step-label">Step 3</div>
+            <h2>Explore Mentor Profiles</h2>
+            <ul>
+              <li>Check their bio, education, and qualifications</li>
+              <li>Read reviews from other students</li>
+              <li>Compare experience levels and teaching styles</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Diagonally Rotated Image Column -->
+        <div class="col col-6" style="display: flex; align-items: center; justify-content: center;">
+          <img class="fade-in" src="/media/5iacjln5/untitled-design-10.svg" alt="Mentor Profiles Preview">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- STEP 4 (Grey Background, Full-Width) -->
+  <section class="step-4 full-bg fade-in">
+    <div class="container">
+      <div class="row">
+        <!-- Text Column -->
+        <div class="col col-6">
+          <div>
+            <div class="step-label">Step 4</div>
+            <h2>Watch Mentor Videos</h2>
+            <ul>
+              <li>Watch their introduction video</li>
+              <li>Observe their communication style</li>
+              <li>Understand their personality and teaching approach</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Image Column -->
+        <div class="col col-6" style="display: flex; align-items: center; justify-content: center;">
+          <img class="fade-in" src="/media/1zangk02/untitled-design-9.svg" alt="Mentor Video Preview">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- STEP 5 (White Background) -->
+  <section class="step-5 fade-in" style="background-color: #fff;">
+    <div class="container">
+      <div class="row">
+        <!-- Text Column -->
+        <div class="col col-6">
+          <div>
+            <div class="step-label">Step 5</div>
+            <h2>Book a Lesson</h2>
+            <ul>
+              <li>Select a mentor that fits your needs</li>
+              <li>Choose a time that works for you</li>
+              <li>Lock in your session and get started!</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Image Column -->
+        <div class="col col-6" style="display: flex; align-items: center; justify-content: center;">
+          <img class="fade-in" src="https://cdn-icons-png.flaticon.com/512/9974/9974688.png" alt="Book Lesson Icon">
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
+
